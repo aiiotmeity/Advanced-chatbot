@@ -13,18 +13,37 @@ from langchain_community.chat_message_histories import ChatMessageHistory
 # =====================================================================
 st.set_page_config(page_title="Center for AI-IoT Innovations", page_icon="🌐", layout="wide")
 
+# =====================================================================
+# UI CONFIGURATION & HERO BRANDING
+# =====================================================================
+# INJECT THIS BLOCK TO REMOVE THE CLOUD PLATFORM FOOTER STRIP COMPLETELY:
+st.markdown(
+    """
+    <style>
+    /* Hides the complete bottom footer toolbar wrapper container */
+    footer {visibility: hidden; height: 0px;}
+    .stAppDeployDropdown {display: none;}
+    stViewerActionButton {display: none;}
+    
+    /* Removes extra blank padding space created by forcing the footer away */
+    .stAppViewer {padding-bottom: 0px;}
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
 st.title("🌐 Center for AI-IoT Innovations")
+
 st.caption("Sponsored by Ministry of Electronics and Information Technology (MeitY)")
 st.markdown(
-    "*A state-of-the-art facility focused on the integration of electronics hardware design "
-    "with artificial intelligence (AI) and explainable AI (XAI).* "
+    "*An AI-IoT Research Center focused on intelligent sensors, embedded systems, cloud technologies, and real-world smart applications.*"
 )
 st.markdown("---")
 
 # =====================================================================
 # SIDEBAR: TELEMETRY VIEWERS FOR ONGOING SYSTEMS
 # =====================================================================
-st.sidebar.header("📡 Live IoT Innovation Nodes")
+
 st.sidebar.markdown("---")
 
 # # Air Quality Telemetry Node
