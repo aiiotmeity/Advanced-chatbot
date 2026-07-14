@@ -70,13 +70,70 @@ def initialize_knowledge_base():
     # Check this section inside your initialize_knowledge_base() function
     system_knowledge = """
     =====================================================================
+    CENTER OVERVIEW
+    =====================================================================
+    Facility Name: Center for AI-IoT Innovations
+    Official Website: https://aiiot.it.com
+    Sponsorship: Funded and sponsored by the Ministry of Electronics and Information Technology (MeitY), Government of India.
+    Location: Adi Shankara Institute of Engineering and Technology (ASIET), Kalady, Kerala, India.
+    Core Objective: Integration of electronic hardware design with artificial intelligence (AI) and explainable AI (XAI).
+
+    =====================================================================
     SECTION 1: AIR QUALITY MONITORING (PROJECT 1)
     =====================================================================
     Project Name: Air Quality Monitoring
     React Page Link: <a href="https://aiiot.it.com/product-details/indoor-monitor" target="_parent">AQMS-Indoor</a> or <a href="https://aiiot.it.com/product-details/outdoor-station" target="_parent">AQMS-Outdoor</a>
     Description: Developed a smart sensor module capable of real-time monitoring and management of environmental pollutants.
     Tracked Parameters: PM2.5, PM10, CO₂, CO, NH₃, temperature, and humidity.
-    """
+    Hardware Architecture: Integrates multiple gas and environmental sensors to continuously measure ambient air quality parameters.
+    Research Milestones: Published comprehensive analyses focusing on Recurrent Neural Networks (RNN) model comparison for predictive air pollution forecasting.
+
+    =====================================================================
+    SECTION 2: SMART WATER LEVEL MONITORING (PROJECT 2)
+    =====================================================================
+    Project Name: Smart Water Level Monitoring
+    React Page Link: <a href="https://aiiot.it.com/product-details/flood-alert" target="_parent">Predictive Flood Alert</a> or <a href="https://aiiot.it.com/river-forecast" target="_parent">River Forecast</a>
+    Description: A robust and intelligent system designed for real-time water level tracking with an integrated early-warning alert mechanism to mitigate flood risks.
+    System Capabilities: Continuously monitors water fluctuations using sensor-based measurements and ensures timely notifications during critical water level rises.
+    Cloud & AI Logic: Feeds live telemetry streams into predictive data models to calculate river-level forecasts and alert regional dashboards.
+
+    =====================================================================
+    SECTION 3: DIGITAL WATER DISTRIBUTION (PROJECT 3)
+    =====================================================================
+    Project Name: Digital Water Distribution
+    React Page Link: <a href="https://aiiot.it.com/product-details/distribution-net" target="_parent">Digital Flow Meter</a> or <a href="https://aiiot.it.com/demand-forecasting" target="_parent">Demand Forecasting</a>
+    Description: The Digital Water Distribution system creates a virtual replica (digital twin) of water distribution networks.
+    System Capabilities: Enables real-time monitoring, leak detection, and predictive maintenance.
+    AI Integration: Uses IoT sensors and AI analytics to optimize water flow distribution and significantly reduce water wastage.
+    Intellectual Property: Supported by an official Indian Patent filed for an Artificial Intelligence Integrated Water Distribution and Monitoring System.
+
+    =====================================================================
+    SECTION 4: STARTUP & SKILL DEVELOPMENT (PROJECT 4)
+    =====================================================================
+    Project Name: Startup & Skill Development
+    React Page Link: <a href="https://aiiot.it.com/product-details/iot-training" target="_parent">IoT Workshops</a> or <a href="https://aiiot.it.com/product-details/pcb-workshop" target="_parent">PCB Design Course</a>
+    Description: Building a vibrant startup ecosystem while offering hands-on skill development programs centered around our IoT solutions.
+    Target Audience: Empowers innovators, engineering students, and tech professionals to adopt emerging technologies and bring ideas to market.
+    Educational Offerings: Conducts regular hands-on workshops covering custom Flask frameworks, PCB design workflows, and IoT cloud connectivity solutions.
+   
+   =========================================================
+PERMANENT CORE DIRECTORY RULES (HARDCODED TRUTH):
+=========================================================
+1. OFFICIAL CONTACT CHANNELS:
+   - Institution: Adi Shankara Institute of Engineering and Technology (ASIET), Kalady, Ernakulam, Kerala.
+   - Official Center Email: aiiot@adishankara.ac.in[cite: 3]
+   - Contact Helpline Phone Number: 9846900310[cite: 3]
+   - Leadership/Investigators: Dr. Ajay Kumar, Mr. Albins Paul, Prof. P.V. Rajaraman[cite: 3].
+
+2. LINK FORMATTING RULE:
+   Whenever you output contact paths or links, use absolute target paths.
+   If a user asks how to contact, call, or email the center, you MUST output this exact official text data above[cite: 3]. Never generate sample phone numbers or dummy emails.
+=========================================================
+
+Retrieved Research Context:
+{context}
+
+Respond professionally, highlighting how our sensor networks, AI integration, and ecosystem can assist the user."""
 
     text_splitter = RecursiveCharacterTextSplitter(chunk_size=400, chunk_overlap=40)
     chunks = text_splitter.split_text(system_knowledge)
