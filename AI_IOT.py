@@ -120,7 +120,7 @@ llm_brain = ChatGroq(model="llama-3.1-8b-instant", groq_api_key=api_key, tempera
 if "chat_history_store" not in st.session_state:
     st.session_state.chat_history_store = ChatMessageHistory()
 if "ui_chat_logs" not in st.session_state:
-    st.session_state.ui_chat_logs = [{"role": "assistant", "content": "Welcome to the Center for AI-IoT Innovations knowledge system. Ask me anything about our four primary research areas and deployment goals."}]
+    st.session_state.ui_chat_logs = [{"role": "assistant", "content": "Welcome! Ask me anything about our MeitY-sponsored research projects, hardware sensor setups, or dynamic system integration routes."}]
 
 # Build Pipeline Logic Chains
 system_instruction = """You are an expert AI-IoT Technical Research Assistant. 
@@ -163,13 +163,13 @@ for msg in st.session_state.ui_chat_logs:
     with st.chat_message(msg["role"]):
         st.markdown(msg["content"])
 
-if prompt_input := st.chat_input("Ask about our ongoing initiatives (Air Quality, Water Levels, Skilling)..."):
+if prompt_input := st.chat_input("Ask about our ongoing initiatives ..."):
     st.session_state.ui_chat_logs.append({"role": "user", "content": prompt_input})
     with st.chat_message("user"):
         st.markdown(prompt_input)
         
     with st.chat_message("assistant"):
-        with st.spinner("Searching RAG knowledge indexes..."):
+        with st.spinner("Searching knowledge indexes..."):
             response = bot_engine.invoke(
                 {"input": prompt_input},
                 config={"configurable": {"session_id": "cloud_prod_run"}}
